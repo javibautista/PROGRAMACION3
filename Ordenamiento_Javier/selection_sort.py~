@@ -1,0 +1,25 @@
+def selection_sort(array):
+    i=0
+    while i < len(array):
+        #print('i = %d',%(i))
+        j = i+1
+        pos_min = i
+        while j < len(array):
+            #objetivo descubrir la posicion minima
+            # j es la posicion actual
+            # pos_min es la que yo creo que es la menor
+            if array[j] < array[pos_min]:
+                # estaba equivocado, así que .....
+                pos_min = j
+            j += 1
+        # ahora estoy seguro que pos_min es el minimo
+        # intercambio
+        tmp = array[i]
+        array[i] = array[pos_min]
+        array[pos_min] = tmp
+        
+        i += 1
+    return array
+if __name__ == '__main__':
+    array = [6,7,8,9,3,4,5,2,1]
+    print(selection_sort(array))
